@@ -1,0 +1,1042 @@
+@charset "utf-8";
+/*======================
+common
+====================== */
+
+:root {
+    --primary-blue: #2364AA;
+    --primary-background: #FFFCE7;
+    --primary-orange:#EA7317;
+    --primary-brown:#5C3216;
+    --primary-water:#35D2D5;
+    --primary-morewater:#73BFB8;
+    --primary-deepwater:#059CA1;;
+    --SPcontentPadding: 10%;
+    --PCcontentPadding: 7%;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body{
+    font-family:"Noto Sans TC",
+    "Aoboshi One",
+    "Abhaya Libre";
+    font-style: normal;
+    font-weight: 400;
+    color: #000;
+    line-height: normal;
+}
+
+.main{
+  background-color: var(--primary-background);
+}
+
+.section__title{
+  color: var(--primary-blue);
+  text-align: center;
+  margin-top: 40px;
+}
+
+.section__title--top{
+  font-family: "Aoboshi One";
+  font-size: 4.8rem;
+  margin-bottom: 20px;
+}
+
+.section__title--bottom{
+  font-family: "Noto Sans TC";
+  font-size: 2rem;
+  font-weight: 300;
+}
+
+@media screen and (min-width:769px) {
+
+  .section__title--top{
+    font-size: 9.6rem;
+  }
+
+  .section__title--bottom{
+    font-size: 3.2rem;
+  }
+}
+
+.slick-initialized .slick-slide.Gameplay__blocks--item {
+    display: flex;
+}
+
+
+
+/*======================
+nav
+====================== */
+
+.nav{
+  width: 100%;
+  height: 100vh;
+  flex-shrink: 0;
+  background-color: white;
+  padding: 40px var(--SPcontentPadding);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  transform: translateX(-100%);
+  transition: 0.4s;
+}
+
+.nav.active{
+    transform: translateX(0);
+    
+}
+
+.no-scroll{
+  overflow: hidden;
+}
+
+.nav__logo{
+  width: 44%;
+  flex-shrink: 0;
+  margin-bottom: 40px;
+
+}
+
+.nav__list{
+  color: var(--primary-blue);
+}
+
+.nav__list--item{
+  margin-bottom: 24px;
+  cursor: pointer;
+}
+
+
+.nav__list--item-top{
+  font-family: "Aoboshi One";
+  font-size: 3.2rem;
+  line-height: 120%;
+  margin-bottom: 8px;
+}
+
+.nav__list--item-bottom{
+  font-family: "Noto Sans TC";
+  font-size: 1.6rem;
+  font-weight: 500;
+}
+
+.nav__SNSlist{
+  display: flex;
+}
+
+.nav__SNSlist--item{
+  color: white;
+  background-color:var(--primary-blue);
+  display: flex;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  margin-right: 15px;
+  font-size: 2.4rem;
+  align-items: center;
+  padding: 8px;
+  aspect-ratio:1/1;
+}
+
+
+
+.nav__btn{
+  position: absolute;
+  width: 108px;
+  height: 60px;
+  background-color: white;
+  border-radius: 30px;
+  cursor: pointer;
+  z-index: 200;
+  padding-top: 18px;
+  right: var(--PCcontentPadding);
+
+}
+
+.navl__btn--lineset{
+  margin: auto;
+    width: 40px;
+    height: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.nav__btn--line{
+  width: 40px;
+  height: 4px;
+  border-radius: 2px;
+  background-color: var(--primary-blue);
+  transition: transform 0.3s ease-in-out,
+              background-color 0.3s ease-in-out,
+              opacity 0.3s ease-in-out;
+}
+
+
+
+/* 2. 將第一條線移動到中心並旋轉 */
+/* 注意：translateY 的值需要微調，讓它剛好蓋在中間那條線上 */
+.navl__btn--lineset.is-active .nav__btn--line:nth-child(1) {
+  transform: translateY(10px) rotate(45deg);
+}
+
+.navl__btn--lineset.is-active .nav__btn--line:nth-child(2) {
+  opacity: 0;
+}
+
+/* 3. 將第三條線移動到中心並旋轉 */
+.navl__btn--lineset.is-active .nav__btn--line:nth-child(3) {
+  transform: translateY(-10px) rotate(-45deg);
+}
+
+@media screen and (min-width:769px) {
+
+  .nav__btn{
+    display: none;
+  }
+
+
+  .nav{
+      background: transparent;
+      height: 92px;
+      width: 85%;
+      position: static;
+      transform: translate(0);
+      border-radius: 50px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;
+      gap: 3vw;
+      background-color: white;
+      align-items: center;
+
+  }
+
+  .nav__logo{
+    width: 11%;
+    margin: 0;
+  }
+
+  .nav__list{
+    display: flex;
+    gap:2vw;
+  }
+
+  .nav__list--item {
+      margin-bottom: 0px;
+  }
+
+  .nav__list--item-top{
+  font-size: 2rem;
+}
+
+.nav__list--item-bottom{
+  font-size: 1rem;
+}
+
+.nav__SNSlist--item{
+  width: 32px;
+  height: 32px;
+  margin-right: 4px;
+  font-size: 1.6rem;
+  padding: 4px;
+}
+
+}
+
+@media screen and (min-width:1200px) {
+ .nav__list--item-top{
+  font-size: 3.2rem;
+}
+
+.nav__list--item-bottom{
+  font-size: 1.6rem;
+}
+
+.nav__SNSlist--item{
+  width: 48px;
+  height: 48px;
+  margin-right: 15px;
+  font-size: 2.4rem;
+  padding: 8px;
+}
+
+}
+
+/*======================
+FV
+====================== */
+
+.FV{
+  padding-top: 40px;
+  position: relative;
+
+
+}
+
+
+.FV__litle{
+  width: 78%;
+  margin: 140px auto 0;
+  display: block;
+}
+
+.FV__sublitle{
+  margin-top: 28px;
+  color: var(--primary-blue);
+  text-align: center;
+  font-family: "Noto Sans TC";
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 120%;
+}
+
+.FV__date{
+  width: 296px;
+  margin: 0 auto;
+}
+
+.FV__date--year{
+  color: var(--primary-blue);
+  margin: 20px 0 0 20px;
+  font-family: "Abhaya Libre";
+  font-size: 3.6rem;
+  font-weight: 600;
+  line-height: 120%;
+}
+
+
+.FV__date--time{
+  display: flex;
+  justify-content: center;
+}
+
+.FV__date--monthday,.FV__date--to{
+  font-family: "Abhaya Libre";
+  font-size: 7.2rem;
+  font-weight: 600;
+  line-height: 120%;
+  color: var(--primary-blue);
+}
+
+.changecolor{
+  color: var(--primary-orange);
+}
+
+.FV__date--day{
+  color: white;
+  text-align: center;
+  font-family: "Noto Sans TC";
+  font-size: 1.4rem;
+  font-weight: 700;
+  background-color: var(--primary-orange);
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
+
+}
+
+.FV__mainimg{
+  width: 100vw;
+}
+
+.PCimg{
+  display: none;
+}
+
+@media screen and (min-width:769px) {
+
+
+ 
+  .FV__litle{
+    width: 40%;
+  }
+
+  .PCimg{
+    display: block;
+    margin-top: -300px;
+  }
+
+  .SPimg{
+    display: none;
+  }
+
+  .FV__litle{
+    width: 40%;
+    margin: 62px auto 0 10%;
+    display: block;
+  }
+
+  .FV__sublitle{
+    margin-top: 20px;
+    text-align: start;
+    font-size: 2.4rem;
+    margin-left: 10%;
+  }
+
+  .FV__date{
+    width: auto;
+    margin: 0 10%;
+  }
+
+  .FV__date--year{
+    color: var(--primary-blue);
+    margin: 20px 0 0 20px;
+    font-family: "Abhaya Libre";
+    font-size: 3.6rem;
+    font-weight: 600;
+    line-height: 120%;
+  }
+
+  .FV__date--time{
+    justify-content: start;
+  }
+
+  .FV__date--monthday,.FV__date--to{
+  font-size: 9.6rem;
+}
+
+.FV__date--day{
+  font-size: 2rem;
+  height: 28px;
+  width: 28px;
+  border-radius: 50%;
+
+}
+
+
+
+}
+
+
+
+
+/*======================
+Story
+====================== */
+
+.Story{
+  padding: 0 var(--SPcontentPadding);
+  background-image: url(../img/story-sp.png);
+  background-size: 80%;
+  background-repeat: no-repeat;
+  background-position: bottom ;
+}
+
+.Story__txtset{
+  color: var(--primary-brown);
+  text-align: center;
+  font-family: "Noto Sans TC";
+  font-size: 1.4rem;
+  line-height: 150%;
+  margin-top: 28px;
+}
+
+.Story__txt{
+  margin-bottom: 20px;
+}
+
+.Story__img{
+  display: flex;
+  justify-content: center;
+}
+
+.Story__backimg{
+  width: 60px;
+}
+
+.Story__frountimg{
+  width: 100px;
+}
+
+@media screen and (min-width:769px) {
+  .Story{
+    padding: 0 var(--PCcontentPadding) 200px;
+    background-image: url(../img/story-pc.svg);
+    background-size: 85%;
+    background-repeat: no-repeat;
+    background-position: center 60px ;
+    position: relative;
+  }
+
+  .Story__txtset{
+    font-size: 1.4rem;
+    line-height: 150%;
+    margin-top: 28px;
+    width: 75%;
+    margin: 0 auto;
+  }
+
+  .Story__txtset{
+    font-size: 2.4rem;
+  }
+
+
+  .Story__img{
+    justify-content: center;
+    gap: 20%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -100px;
+  }
+
+  .Story__backimg{
+    width: 150px;
+  }
+
+  .Story__frountimg{
+    width: 235px;
+    margin-bottom: 60px;
+  }
+
+}
+
+/*======================
+Gameplay
+====================== */
+
+.Gameplay{
+  padding: 40px var(--SPcontentPadding);
+  background-color: var(--primary-water);
+  padding-top:40px ;
+  border-radius: 50px;
+}
+
+.Gameplay .section__title{
+  color: white;
+}
+
+.Gameplay__blocks--item{
+  margin: 0 30px;
+}
+
+.blocks--item-pic{
+  position: relative;
+  margin: 72px auto 0;
+}
+
+.blocks--item-pic-step{
+  background-color: var(--primary-orange);
+  width: 100px;
+  height: 100px;
+  border-radius: 50px;
+  padding: 10px;
+  position: absolute;
+  left: -20px;
+  top: -20px;
+
+}
+
+.blocks--item-pic-step-txt{
+  text-align: center;
+  font-family: "Abhaya Libre";
+  font-size: 2.4rem;
+  font-weight: 600;
+  color: white;
+}
+
+.blocks--item-pic-step-nun{
+  text-align: center;
+  font-family: "Abhaya Libre";
+  font-size: 4.8rem;
+  font-weight: 600;
+  color: white;
+}
+
+.blocks--item-pic-img{
+  width: 295px;
+  height: 260px;
+  border-radius: 20px;
+  border: 8px solid #FFF;
+  object-fit: cover;
+}
+
+.blocks--item-txt-title{
+  margin-top: 20px;
+  
+}
+
+.blocks--item-txt-p{
+  font-family: "Noto Sans TC";
+  font-size: 1.6rem;
+  line-height: 150%;
+  margin-top: 28px;
+}
+
+.Gameplay__blocks--item{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.blocks--item-pic.first-item{
+  order: -1;
+}
+
+.Gameplay__turnbtn{
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 36px;
+  cursor: pointer;
+}
+
+.Gameplay__turnbtn--btn{
+  background-color: var(--primary-orange);
+  width: 48px;
+  height: 48px;
+  border-radius: 24px;
+
+}
+
+@media screen and (min-width:769px) {
+  .Gameplay{
+    padding: 74px var(--PCcontentPadding);
+    border-radius: 100px;
+  }
+
+ 
+
+  .Gameplay__blocks--item{
+    display: flex;
+    justify-content: center;
+    gap: 80px;
+    margin: 0 auto 40px;
+    width: 70%;
+
+  }
+
+  
+  .blocks--item-pic.first-item{
+    order: 0;
+  }
+
+  .blocks--item-pic-img{
+    width: 480px;
+    height: 430px;
+  }
+
+  .blocks--item-txt{
+    width: 30%;
+    margin-top: 52px;
+
+  }
+
+  .blocks--item-txt.rightmargin{
+    margin-right: 120px;
+  }
+
+  .blocks--item-pic-step{
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    padding: 15px;
+    left: -80px;
+    top: -40px;
+
+  }
+
+  .blocks--item-pic-step-txt{
+    font-size: 3.2rem;
+
+  }
+
+  .blocks--item-pic-step-nun{
+    font-size: 9.6rem;
+    line-height: 80%;
+  }
+
+  .Gameplay__turnbtn{
+    display: none;
+  }
+}
+
+/*======================
+Map
+====================== */
+
+
+.Map__postlist{
+  display: flex;
+  margin-top: 20px;
+  overflow: hidden;
+}
+
+.Map__postlist--item{
+  width: 200px;
+  height: 320px;
+  border-radius: 5px;
+  border: 3px solid var(--primary-morewater);
+  background: #FFF;
+  box-shadow: 7px 9px 0 0 var(--primary-morewater);
+  padding: 16px 12px 24px;
+  flex-shrink: 0;
+  margin: 0 20px;
+  cursor: pointer;
+
+}
+
+.Map__postlist--item-click{
+  transform: translateY(100%);
+  opacity: 0;
+  margin:0 16px 10px auto;
+  transition: transform 0.3s ease-in-out,
+              background-color 0.3s ease-in-out,
+              opacity 0.3s ease-in-out;
+  
+}
+
+.Map__postlist--item-click.hadclick{
+  transform: translate(0);
+  opacity: 1;
+  
+}
+
+
+
+.Map__postlist--item-title{
+  display: flex;
+  margin-bottom: 12px;
+}
+
+.postlist--item-title-circle{
+  background-color: var(--primary-morewater);
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+
+}
+
+.postlist--item-title-txt{
+  color: var(--primary-blue);
+  font-family: "Noto Sans TC";
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 120%;
+  margin-left: 4px;
+}
+
+.Map__postlist--img{
+  width: 172px;
+  height: 172px;
+  object-fit: cover;
+
+}
+
+.Map__postlist--iconlist{
+  gap: 4px;
+  display: flex;
+  margin: 8px auto;
+}
+
+.Map__postlist--icon{
+  width: 24px;
+  height: 24px;
+}
+
+.postlist--down{
+  margin-top: 40px;
+}
+
+.Map__imgset{
+  position: relative;
+}
+
+.Map__imgset--img{
+  width: 100px;
+  position: absolute;
+}
+
+.Map__imgset--img.left{
+  left: 7%;
+}
+
+.Map__imgset--img.right{
+  right: 7%;
+}
+
+@media screen and (min-width:769px) {
+
+  .Map__postlist{
+    margin-top: 108px;
+    gap: 22px;
+  }
+
+  .Map__postlist--item{
+    width: 265px;
+    height: 407px;
+    border-radius: 5px;
+    padding: 16px 20px 40px;
+    flex-shrink: 0;
+  }
+
+  .Map__postlist--img{
+    width: 226px;
+    height: 208px;
+  }
+
+  .Map__postlist--item-title{
+    align-items: center;
+  }
+
+  .postlist--item-title-txt{
+    font-size: 2rem;
+    margin-left: 8px;
+  }
+
+  .postlist--item-title-circle{
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+  }
+
+  .Map__postlist--icon{
+    width: 32px;
+    height: 32px;
+  }
+
+  .Map__postlist--item-txt{
+    font-size: 1.6rem;
+  }
+
+
+  .Map__imgset--img{
+    width: 235px;
+    bottom: -250px;
+  }
+
+  .Map__imgset--img.left{
+    left: var(--PCcontentPadding);
+  }
+
+  .Map__imgset--img.right{
+    right: var(--PCcontentPadding);
+  }
+
+
+}
+
+/*======================
+Rewards
+====================== */
+
+.Rewards{
+  margin-top: 152px;
+  padding-bottom: 52px;
+}
+
+.Rewards__item{
+  margin-top: 72px;
+  
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.Rewards__set{
+  position: relative;
+}
+
+.Rewards__set--title{
+  width: 260px;
+  height: 48px;
+  background-color: var(--primary-deepwater);
+  color: white;
+  text-align: center;
+  font-family: "Noto Sans TC";
+  font-size: 2.4rem;
+  font-weight: 700;
+  position: absolute;
+  left: 50%;
+  bottom: -24px;
+  transform: translateX(-50%);
+  line-height: 48px;
+}
+
+.Rewards__set--title.first{
+bottom: -24px;
+}
+
+.Rewards__set--title.last{
+bottom: -24px;
+}
+
+.Rewards__txt{
+  margin-top: 52px;
+  padding:0 7%;
+  font-family: "Noto Sans TC";
+  font-size: 1.4rem;
+}
+
+.Rewards__set.order1{
+  order: -1;
+}
+
+@media screen and (min-width:769px) {
+  .Rewards{
+  margin-top: 300px;
+  margin-bottom: 160px;
+}
+
+.Rewards__item{
+  display: flex;
+  flex-wrap: nowrap;
+align-items: flex-end;
+}
+
+.Rewards__item--img{
+  width: 710px;
+  height: 400px;
+  object-fit: cover;
+}
+
+.Rewards__item--img.leftimg{
+  border-radius: 0 30px 30px 0;
+}
+
+.Rewards__item--img.rightimg{
+  border-radius:30px 0 0 30px;
+}
+
+.Rewards__set.order1{
+  order: 0;
+  border-radius: 30px 0 0 30px;
+}
+
+.Rewards__txt--title{
+  font-size: 3.6rem;
+  width: 428px;
+  height: 80px;
+  line-height: 80px;
+}
+
+.Rewards__txt{
+  width: 80%;
+  font-size: 2.4rem;
+  line-height: 150%;
+  margin-bottom: 18px;
+}
+
+.Rewards__set--title.first{
+bottom: 160px;
+left: 550px;
+}
+
+.Rewards__set--title.last{
+bottom: 160px;
+left: -40px;
+}
+
+
+
+}
+
+/*======================
+ServiceCounter
+====================== */
+
+.ServiceCounter{
+  background-color: var(--primary-water);
+  padding-top: 40px;
+  padding-bottom:40px ;
+  border-radius: 50px 50px 0 0;
+}
+
+.ServiceCountertitle{
+  color: white;
+}
+
+.ServiceCounter__map{
+  display: block;
+  margin: 46px auto 20px;
+  border-radius: 10px;
+  width:295px;
+  height:277px;
+}
+
+.ServiceCounter__txt{
+  text-align: center;
+  font-family: "Noto Sans TC";
+  font-size: 1.4rem;
+}
+
+@media screen and (min-width:769px) {
+  .ServiceCounter__map{
+    margin: 65px auto 44px;
+    border-radius: 20px;
+    width: 1118px;
+    height: 400px;
+  }
+
+  .ServiceCounter__txt{
+    font-size: 2.4rem;
+  }
+}
+
+/*======================
+footer
+====================== */
+
+.footer{
+  background-color: var(--primary-water);
+  padding-bottom: 20px;
+}
+
+.footer__SNSlist{
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+.footer__SNSlist--item{
+  color: var(--primary-water);
+  background-color:white;
+  display: flex;
+  justify-content: center;
+  width: 48px;
+  height: 100%;
+  border-radius: 50%;
+  margin-right: 15px;
+  font-size: 2.4rem;
+  align-items: center;
+  padding: 8px;
+  aspect-ratio:1/1;
+}
+
+.footer__txt{
+  margin-top: 20px;
+  text-align: center;
+  font-family: "Noto Sans TC";
+  font-size: 1.2rem;
+}
+
+@media screen and (min-width:769px) {
+.footer__txt{
+  margin-top: 20px;
+  text-align: center;
+  font-family: "Noto Sans TC";
+  font-size: 2rem;
+}
+}
