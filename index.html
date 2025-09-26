@@ -43,23 +43,23 @@
             <nav class="nav">
                 <img class="nav__logo" src="img/title.svg" alt="">
                 <ul class="nav__list">
-                    <li class="nav__list--item">
+                    <li class="nav__list--item Storybtn">
                         <div class="nav__list--item-top">Story</div>
                         <div class="nav__list--item-bottom">風城故事</div>
                     </li>
-                    <li class="nav__list--item">
+                    <li class="nav__list--item Gameplaybtn">
                         <div class="nav__list--item-top">Gameplay</div>
                         <div class="nav__list--item-bottom">尋寶玩法</div>
                     </li>
-                    <li class="nav__list--item">
+                    <li class="nav__list--item Mapbtn">
                         <div class="nav__list--item-top">Map</div>
                         <div class="nav__list--item-bottom">尋寶地圖</div>
                     </li>
-                    <li class="nav__list--item">
+                    <li class="nav__list--item Rewardsbtn">
                         <div class="nav__list--item-top">Rewards</div>
                         <div class="nav__list--item-bottom">豐富獎賞</div>
                     </li>
-                    <li class="nav__list--item">
+                    <li class="nav__list--item Counterbtn">
                         <div class="nav__list--item-top">Counter</div>
                         <div class="nav__list--item-bottom">服務櫃台</div>
                     </li>
@@ -103,7 +103,7 @@
             <img class="FV__mainimg PCimg" src="img/PC-FV.svg" alt="">
         </section>
 
-        <section class="Story">
+        <section class="Story"id="Story">
             <div class="section__title ">
                 <h3 class="section__title--top">Srory</h3>
                 <h4 class="section__title--bottom">風城故事</h4>
@@ -121,7 +121,7 @@
             </div>
         </section>
 
-        <section class="Gameplay">
+        <section class="Gameplay" id="Gameplay">
             <div class="section__title">
                 <h3 class="section__title--top">Gameplay 5 Steps</h3>
                 <h4 class="section__title--bottom">尋寶5步驟</h4>
@@ -209,7 +209,7 @@
 
         </section>
 
-        <section class="Map">
+        <section class="Map" id="Map">
             <div class="section__title">
                 <h3 class="section__title--top">Map</h3>
                 <h4 class="section__title--bottom">尋寶地圖</h4>
@@ -320,32 +320,33 @@
 
         </section>
 
-        <section class="Rewards">
+        <section class="Rewards" id="Rewards">
             <div class="section__title">
                 <h3 class="section__title--top">Rewards</h3>
                 <h4 class="section__title--bottom">豐富獎賞</h4>
             </div>
 
             <div class="Rewards__item">
-                <img class="Rewards__item--img leftimg" src="img/Rewards-pic01.jpg" alt="">
-                <div class="Rewards__txt">
-                    <h5 class="Rewards__txt--title first">人人有獎！集章抽好禮</h5>
-                    <p class="Rewards__txt--txt">只要你集滿地圖上的所有印章，即可憑地圖前往指定兌獎處，參與我們的「人人有獎」抽獎活動！無論大小，每位完成挑戰的城市漫遊家，都將獲得一份驚喜好禮，感謝你的熱情參與！</p>
+                <div class="Rewards__set">
+                        <img class="Rewards__item--img leftimg" src="img/Rewards-pic01.jpg" alt="">
+                        <h5 class="Rewards__set--title first">人人有獎！集章抽好禮</h5>
                 </div>
+                
+                    <p class="Rewards__txt">只要你集滿地圖上的所有印章，即可憑地圖前往指定兌獎處，參與我們的「人人有獎」抽獎活動！無論大小，每位完成挑戰的城市漫遊家，都將獲得一份驚喜好禮，感謝你的熱情參與！</p>
             </div>
 
             <div class="Rewards__item">
-                <div class="Rewards__txt">
-                    <h5 class="Rewards__txt--title last">專屬優惠！憑圖享折扣</h5>
-                    <p class="Rewards__txt--txt">你的尋寶地圖不僅是成就的證明，更是你的專屬優惠通行證！憑蓋滿印章的尋寶地圖，即可在新竹市多家精選合作餐飲、文創、伴手禮店家，享有獨家折價優惠。讓你的城市漫遊，吃喝玩樂都划算！</p>
+                    
+                    <p class="Rewards__txt">你的尋寶地圖不僅是成就的證明，更是你的專屬優惠通行證！憑蓋滿印章的尋寶地圖，即可在新竹市多家精選合作餐飲、文創、伴手禮店家，享有獨家折價優惠。讓你的城市漫遊，吃喝玩樂都划算！</p>
+                <div class="Rewards__set order1">
+                    <img class="Rewards__item--img rightimg" src="img/Rewards-pic02.png" alt="">
+                    <h5 class="Rewards__set--title last">專屬優惠！憑圖享折扣</h5>
                 </div>
-
-                <img class="Rewards__item--img order1" src="img/Rewards-pic02.png" alt="">
             </div>
 
         </section>
 
-        <section class="ServiceCounter">
+        <section class="ServiceCounter" id="ServiceCounter">
             <div class="section__title ServiceCountertitle">
                 <h3 class="section__title--top">Service Counter</h3>
                 <h4 class="section__title--bottom">服務櫃台</h4>
@@ -370,7 +371,7 @@
 <!-- jQuery & slick js -->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script src="slick/slick.min.js"></script>
-    <script src="js/main.js"></script>
+    <script src="JS/main.js"></script>
     <script src="https://kit.fontawesome.com/ba7733ae26.js" crossorigin="anonymous"></script>
 </html>
 
