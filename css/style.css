@@ -548,6 +548,8 @@ Gameplay
   position: absolute;
   left: -20px;
   top: -20px;
+    z-inside:100;
+
 
 }
 
@@ -1050,3 +1052,4 @@ footer
 }
 
 }
+
