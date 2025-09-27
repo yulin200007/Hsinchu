@@ -146,12 +146,3 @@ $('.Map__postlist').slick({
   autoplay: true,
   autoplaySpeed: 1500,
 });
-
-$('.Gameplay__blocks').slick({
-  // ...你的 Slick 設定
-});
-
-// 在 Slick 初始化完成後，重新設定 flex-shrink
-$(document).ready(function() {
-  $('.slick-slide').css('flex-shrink', '0');
-});
