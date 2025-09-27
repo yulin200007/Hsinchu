@@ -634,9 +634,18 @@ Gameplay
     order: 0;
   }
 
+ .blocks--item-pic{
+    position: relative;
+    margin: 72px auto 0;
+    width: 40%;
+  }
+
   .blocks--item-pic-img{
-    width: 480px;
-    height: 430px;
+    width: 100%;
+    height: 380px;
+    position: absolute;
+    top: 0;
+    left: 0;
   }
 
   .blocks--item-txt{
@@ -1039,4 +1048,5 @@ footer
   font-family: "Noto Sans TC";
   font-size: 2rem;
 }
+
 }
