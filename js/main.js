@@ -1,5 +1,5 @@
- 
- 
+
+
 const StorySection = document.getElementById('Story');
 
 // 取得點擊按鈕的元素
@@ -44,7 +44,7 @@ MapButton.addEventListener('click', (e) => {
 
   // 讓頁面平滑地滾動到目標區塊
   MapSection.scrollIntoView({
-    behavior: 'smooth'
+    behavior: 'smooth',
   });
 });
 
@@ -92,21 +92,36 @@ CounterButton.addEventListener('click', (e) => {
     nivlist.classList.toggle('active');
     lineset.classList.toggle('is-active');
     body.classList.toggle('no-scroll');
-  
+
  })
+
+ 
 const locationset = document.querySelectorAll('.Map__postlist--itemset');
+
 locationset.forEach(item => {
+  const heart = item.querySelector('.Map__postlist--item-click');
 
- const heart = item.querySelector('.Map__postlist--item-click');
+  item.addEventListener('click', () => {
+    // 檢查：當前項目是否已經是 'hadclick' 狀態？
+    const wasActive = heart.classList.contains('hadclick');
 
- item.addEventListener('click',() => {
-  heart.classList.toggle('hadclick');
- });
+    // 步驟一：清除所有項目的 'hadclick' 狀態
+    locationset.forEach(otherItem => {
+      const otherHeart = otherItem.querySelector('.Map__postlist--item-click');
+      otherHeart.classList.remove('hadclick');
+    });
+
+    // 步驟二：如果點擊的不是原本亮的那個，就把它設為亮
+    // 如果點擊的是原本亮的那個 (wasActive = true)，則不會執行這段，等於熄滅了
+    if (!wasActive) {
+      heart.classList.add('hadclick');
+    }
+  });
 });
 
 //監聽視窗大小改變的事件
 $(window).on('resize', function() {
- 
+
   // 取得目前的視窗寬度
   var currentWidth = $(window).width();
 
@@ -129,12 +144,6 @@ $(window).on('resize', function() {
   }
 }).resize(); // .resize() 會在頁面載入時先執行一次
 
-     
-
-
-
-
-
 
 $('.Map__postlist').slick({
   dots: true,
@@ -146,3 +155,4 @@ $('.Map__postlist').slick({
   autoplay: true,
   autoplaySpeed: 1500,
 });
+
