@@ -628,6 +628,8 @@ Gameplay
     gap: 80px;
     margin: 0 auto 40px;
     width: 70%;
+      z-index: 100;
+      
 
   }
 
@@ -1052,5 +1054,6 @@ footer
 }
 
 }
+
 
 
