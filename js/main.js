@@ -87,15 +87,25 @@ CounterButton.addEventListener('click', (e) => {
  const nivlist = document.querySelector('.nav');
  const lineset = document.querySelector('.navl__btn--lineset');
  const body = document.querySelector('body');
+const navitem = document.querySelectorAll('.nav__list--item');
 
- navbtn.addEventListener('click',function(){
-    nivlist.classList.toggle('active');
+navbtn.addEventListener('click', function () {
+  nivlist.classList.toggle('active');
+  lineset.classList.toggle('is-active');
+  body.classList.toggle('no-scroll');
+
+});
+
+navitem.forEach(item => {
+  item.addEventListener('click', function () {
+    nivlist.classList.remove('active')
     lineset.classList.toggle('is-active');
     body.classList.toggle('no-scroll');
+  })
+});
 
- })
 
- 
+
 const locationset = document.querySelectorAll('.Map__postlist--itemset');
 
 locationset.forEach(item => {
