@@ -618,9 +618,7 @@ Gameplay
   .Gameplay{
     padding: 74px var(--PCcontentPadding);
     border-radius: 100px;
-    background-image:url('../img/line.svg');
-    background-repeat:norepeat;
-    background-position:center;
+  
       
   }
 
@@ -1058,6 +1056,7 @@ footer
 }
 
 }
+
 
 
 
